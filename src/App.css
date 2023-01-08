@@ -1,5 +1,6 @@
 body {
-    background: #fff;
+    background-image: url("image/bgc4.gif");
+    background-size: cover;
 }
 
 .btn {

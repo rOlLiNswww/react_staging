@@ -27,7 +27,7 @@ class Item extends Component {
         const {id,name,done} = this.props
         return (
             <div>
-                <li style={{backgroundColor:this.state.mouse ? '#ddd':'white'}} onMouseLeave={this.handleMouse(false)} onMouseEnter={this.handleMouse(true)}>
+                <li style={{backgroundColor:this.state.mouse ? '#ffffff66':'transparent'}} onMouseLeave={this.handleMouse(false)} onMouseEnter={this.handleMouse(true)}>
                     <label>
                         <input type="checkbox" checked={done} onChange={this.handleCheck(id)}/>
                         <span>{name}</span>

@@ -10,6 +10,7 @@ li {
 li label {
     float: left;
     cursor: pointer;
+
 }
 
 li label li input {
@@ -32,3 +33,4 @@ li:before {
 li:last-child {
     border-bottom: none;
 }
+

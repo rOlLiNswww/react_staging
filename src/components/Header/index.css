@@ -3,10 +3,13 @@
     width: 560px;
     height: 28px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid transparent;
     border-radius: 4px;
     padding: 4px 7px;
+    background-color: rgba(255,255,255,0.4);
 }
+
+
 
 .todo-header input:focus {
     outline: none;
