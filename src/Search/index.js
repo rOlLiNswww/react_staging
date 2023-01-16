@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import axios from "axios";
-
+import PubSub from 'pubsub-js'
 class Search extends Component {
 
     searchUser =()=>{
         const {value} = this.keyWordEle
-        this.props.updateAppState({isFirst:false,isLoading: true})
-        axios.get(`/api1/search/users234?q=${value}`).then(
-            response => this.props.updateAppState({isLoading:false,users:response.data.items}),
-            error => {this.props.updateAppState({isLoading:false,err:error.message})}
+        PubSub.publish("hihihi",{isFirst:false,isLoading: true})
+        axios.get(`/api1/search/users?q=${value}`).then(
+            response => {PubSub.publish("hihihi",{isLoading:false,users:response.data.items})},
+            error => {PubSub.publish("hihihi",{isLoading:false,err:error.message})}
         )
     }
     render() {
