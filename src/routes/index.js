@@ -3,6 +3,7 @@ import About from "../pages/About";
 import Home from "../pages/Home";
 import Message from '../pages/Message'
 import News from "../pages/News";
+import Datail from "../pages/Datail";
 
 //路由表
 export default [
@@ -20,7 +21,13 @@ export default [
         },
         {
             path:'Message',
-            element:<Message/>
+            element:<Message/>,
+            children:[
+                {
+                    path:'detail',
+                    element:<Datail/>
+                }
+            ]
         }
         ]
     },

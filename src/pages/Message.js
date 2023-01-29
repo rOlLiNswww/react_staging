@@ -1,21 +1,39 @@
-import React from 'react';
+import React,{useState} from 'react';
+import {Link,Outlet} from 'react-router-dom'
 
 function Message(props) {
+    const [messages] = useState([
+        {id:'001',title:'massage...',content:"锄禾日当午"},
+        {id:'002',title:'massage...',content:"汗滴禾下土"},
+        {id:'003',title:'massage...',content:"谁知盘中餐"},
+        {id:'004',title:'massage...',content:"粒粒皆辛苦"}
+    ])
     return (
         <div>
             <ul>
-                <li>
-                    <a href="/message1">message001</a>&nbsp;&nbsp;
-                </li>
-                <li>
-                    <a href="/message2">message002</a>&nbsp;&nbsp;
-                </li>
-                <li>
-                    <a href="/message/3">message003</a>&nbsp;&nbsp;
-                </li>
+                {
+                    messages.map((m)=>{
+                        return(
+                                <li key={m.id}>
+                                    <Link
+                                    to="detail"
+                                    state={{
+                                        id:m.id,
+                                        title:m.title,
+                                        content:m.content,
+                                    }}
+                                    >{m.title}</Link>
+
+                                </li>
+                            )
+                    })
+                }
             </ul>
+            <hr/>
+            <Outlet/>
         </div>
     );
+
 }
 
 export default Message;
